@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Years Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 50px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      width: 50px;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dog Years Calculator</h1>
+  <form>
+    <label for="age">Enter your age:</label>
+    <input type="text" id="age" name="age" placeholder="Enter your age" required pattern="\d+" min="0" max="100">
+    <button type="button" onclick="calculateDogYears()">Calculate</button>
+  </form>
+  <div class="result" id="result"></div>
+  <script>
+    function calculateDogYears() {
+      var ageInput = document.getElementById("age");
+      var age = parseInt(ageInput.value);
+      var dogYears = age * 7;
+      var resultElement = document.getElementById("result");
+      resultElement.innerText = "Your age in dog years is " + dogYears + ".";
+    }
+  </script>
+</body>
+</html>
